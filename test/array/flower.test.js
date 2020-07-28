@@ -1,4 +1,4 @@
-import flower from '../../src/array/lesson3'
+import flower from '../../src/array/flower'
 
 test('flower: [1, 0, 0, 0, 1]', () => {
     expect(flower([1, 0, 0, 0, 1], 1)).toBe(true)

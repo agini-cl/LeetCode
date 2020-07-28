@@ -1,4 +1,4 @@
-import grayCode from '../../src/array/lesson4'
+import grayCode from '../../src/array/grayCode'
 
 test('grayCode: 2', () => {
     expect(grayCode(2)).toEqual(['00', '01', '11', '10'])
