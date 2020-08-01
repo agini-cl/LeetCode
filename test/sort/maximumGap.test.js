@@ -10,3 +10,6 @@ test('maximumGap: [10]', () => {
 test('maximumGap: [3, 9, 6, 14]', () => {
     expect(maximumGap([3, 9, 6, 14])).toBe(5)
 })
+test('maximumGap: [13, 16, 19, 1]', () => {
+    expect(maximumGap([13, 16, 19, 1])).toBe(12)
+})

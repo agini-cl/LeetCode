@@ -1,9 +1,10 @@
-/* 164. 最大间距
+/**
+ * 164. 最大间距
  * 给定一个无序数组，找出数组在排序之后，相邻元素之间最大的差值
  * 避免使用 sort() 方法
  */
 export default (arr) => {
-    if (arr.length < 1) return 0
+    if (arr.length < 2) return 0
     let len = arr.length
     let maxGap = 0
     let gap
@@ -14,21 +15,20 @@ export default (arr) => {
         arr[n] = temp
     }
 
-    // 选择排序
-    for (let i = 0, min; i < len; i++) {
-        min = i
-        for (let j = i + 1; j < len; j++) {
-            if (arr[j] < arr[min]) {
-                min = j
+    // 冒泡排序
+    for (let i = len - 1; i > 0; i--) {
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(j, j + 1)
             }
         }
-        swap(i, min)
-        if (i > 0) {
-            gap = arr[i] - arr[i - 1]
+        if (i < len - 1) {
+            // 保存相邻项的差值
+            gap = arr[i + 1] - arr[i]
             if (gap > maxGap) {
                 maxGap = gap
             }
         }
     }
-    return maxGap
+    return Math.max(maxGap, arr[1] - arr[0])
 }
